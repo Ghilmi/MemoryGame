@@ -1,0 +1,254 @@
+/* Start Global Rules */
+
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;500;600;700&family=Jomhuria&family=Lexend:wght@100;200;300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500;600;700;800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100&display=swap");
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* hover on item( in box ) : move to top and amileuré la shadow*/
+
+hr {
+    width: 100%;
+    border: none;
+    border-top: 1px solid;
+}
+
+h1 {
+    color: #000;
+}
+
+.container {
+    padding: 0 15px;
+    margin: 0 auto;
+}
+
+@media (min-width: 786px) {
+    .container {
+        width: 750px;
+    }
+}
+
+
+/* medium */
+
+@media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+}
+
+
+/* large */
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+
+:root {
+    --main-color: #2196f3;
+    --socend-color-hover: #1787e0;
+    --aother-color-hover: #ebebeb;
+    --font-color: #404143;
+    --body-color: #fff;
+    --body-socend-color: #ebebeb;
+    --height-header: 120px;
+    --header-color: #1f202b;
+    --list-header-color: #272936;
+    --transition-delay: 0.3s;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--font-color);
+    background-color: var(--body-color);
+    font-family: "Cairo", sans-serif;
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    display: inline-block;
+    color: inherit;
+    font: inherit;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* End Global Rules  */
+
+
+/* Start Header  */
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: var(--main-color);
+}
+
+
+/* End Header  */
+
+
+/* start colector */
+
+.colector {
+    transform: scale(67%);
+    transform-origin: top;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 60px;
+}
+
+.colector .container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 1031px;
+}
+
+.colector .container.noClicking {
+    pointer-events: none;
+}
+
+img {
+    width: 100%
+}
+
+.block {
+    height: 180px;
+    width: 180px;
+    margin: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    /* overflow: hidden; */
+}
+
+.face {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border: solid 4px var(--main-color);
+    overflow: hidden;
+}
+
+.back::after {
+    content: '!';
+    background: #0D47A1;
+    color: #FFEB3B;
+    position: absolute;
+    font-size: 100px;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.front {
+    transform: rotateY(180deg);
+}
+
+.block {
+    height: 180px;
+    flex: 0 1 180px;
+    margin: 10px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease;
+}
+
+.block.active {
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+
+.block.hasMatsh {
+    transform: rotateY(180deg);
+    pointer-events: none;
+}
+
+
+/* end colector */
+
+
+/* start pop */
+
+.pop {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+    border: 2px #777 solid;
+    background: #FFE082;
+    border-radius: 10px;
+    box-shadow: 1px 1px 13px 4px #777;
+    padding: 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease-in;
+    z-index: 1111;
+}
+
+.pop h3 {
+    font-size: 25px;
+    font-weight: 200;
+    margin: 30px 0px;
+}
+
+.pop input {
+    height: 40px;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid #777;
+    outline: none !important;
+    text-align: center;
+}
+
+.pop button {
+    font-size: 15px;
+    padding: 15px 20px;
+    font-weight: 600;
+    margin: 25px;
+    border-radius: 10px;
+    border: 1px solid #777;
+    color: #eee;
+    background: #115e9b;
+}
+
+body {
+    position: relative;
+}
+
+.filter {
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 100%;
+    opacity: 0.4;
+    background-color: #777;
+    z-index: 11;
+    transition: all ease-in 0.5s;
+}
+
+
+/* end pop */
